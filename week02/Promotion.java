@@ -5,7 +5,7 @@ public class Promotion {
 		//자동 타입 변환
 		//큰 데이터 타입 변수 = 작은 데이터 타입 변수를 대입
 		byte	bValue = 25;
-		int		iValue = bValue;
+		int	iValue = bValue;
 		System.out.println(iValue);
 		
 		char cValue = '가';
