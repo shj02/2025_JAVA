@@ -7,7 +7,7 @@ public class DataType1 {
 		byte	bData = 65; //byte = 1byte
 		char	cData = 65; //char = 2byte
 		short	sData = 65; //short = 2byte
-		int		iData = 65; //int = 4byte
+		int	iData = 65; //int = 4byte
 		long	lData = 65; //long = 8byte
 		
 		//실수 데이터 타입
