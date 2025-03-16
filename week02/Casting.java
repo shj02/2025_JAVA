@@ -6,7 +6,7 @@ public class Casting {
 		//작은 타입 = (작은 타입)큰 타입 변수를 적용
 		int		iData = 65;
 		char 	cData = (char)iData;
-		System.out.println(cData);
+		System.out.println(cData); //65 -> A 출력
 		
 		long lData = 500;
 		iData = (int)lData;
@@ -19,7 +19,7 @@ public class Casting {
 		//casting을 적용할 때 데이터 손실 여부 확인
 		int		iValue = 128;
 		byte  	bValue = (byte)iValue;
-		System.out.println(bValue);
+		System.out.println(bValue); //-128 출
 		
 		if (iValue >= Byte.MIN_VALUE && iValue <= Byte.MAX_VALUE)
 			bValue = (byte)iValue; //casting 가능
