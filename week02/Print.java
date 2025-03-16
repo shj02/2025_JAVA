@@ -16,7 +16,7 @@ public class Print {
 		//숫자 출력 시 주의사항
 		System.out.println(17+35);
 		System.out.println("17 + 35 = " + 17+35); //앞에 문자열이 오고 +로 연결되면 뒤에도 문자로 인식함
-		System.out.println("17 + 35 = " + (17+35));
+		System.out.println("17 + 35 = " + (17+35)); //52
 		
 		//프린트 포맷
 		//문자열 출력 포맷 : printf
