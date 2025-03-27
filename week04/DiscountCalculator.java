@@ -10,7 +10,7 @@ public class DiscountCalculator {
 		System.out.print("상품 구매 가격 입력 >> ");
 		int price = sc.nextInt();
 		
-		int rate; //int rate = 0;
+		int rate; //int rate = 0; 초기값 설정
 		if (price >= 100000) {
 			rate = 10;
 		} else if (price >= 50000) {
