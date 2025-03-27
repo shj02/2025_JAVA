@@ -24,6 +24,8 @@ public class DiscountCalculator {
 		System.out.println("원래 가격: " + price + "원");
 		System.out.println("할인율: " + rate + "%");
 		System.out.printf("최종 가격: %.0f원", total);
+		
+		sc.close();
 	}
 
 }
