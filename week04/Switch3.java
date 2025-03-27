@@ -28,6 +28,6 @@ public class Switch3 {
 			}
 			default -> 60;
 		};
-		System.out.println("score2 = " + score2);
+	System.out.println("score2 = " + score2);
 	}
 }
