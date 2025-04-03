@@ -7,7 +7,7 @@ public class ForGugudan2 {
 		//바깥 for문 : 단의 출력
 		for(int i=2; i<=9; i++) {
 			System.out.println("==========");
-			System.out.println(i+"단");
+			System.out.println("구구단 " +i+"단");
 			System.out.println("==========");
 			
 			//안쪽 for문 : 1~9까지 반복
