@@ -14,7 +14,6 @@
 |int|4byte|
 |long(L)|4byte|
 ||
-|:---:|:---:|
 |float(f)|4byte|
 |double|8byte|
 ||
