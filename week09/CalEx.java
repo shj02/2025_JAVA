@@ -18,5 +18,11 @@ public class CalcEx {
 		
 		double result3 = c1.avg(10, 7);
 		System.out.println("avg(10, 7) = " + result3);
+		
+		int sum1 = c1.sum1(new int[] {1,2,3,4,5});
+		System.out.println("{1,2,3,4,5} = " + sum1);
+		
+		int sum2 = c1.sum2(1,2,3,4,5);
+		System.out.println("(1,2,3,4,5) = " + sum2);
 	}
 }
