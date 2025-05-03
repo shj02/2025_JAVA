@@ -5,8 +5,8 @@ public class Calculator {
 	String size;
 		
 	public Calculator(String color, String size) {
-		this.color;
-		this.size;
+		this.color = color;
+		this.size = size;
 	}
 	//전원 켜기
 	//리턴값이 없는 경우
