@@ -32,4 +32,22 @@ public class Calculator {
 		double result = sum / 2;
 		return result;
 	}
+	
+	int sum1(int[] values) {
+		int sum = 0;
+//		for(int i : values)
+//			sum +=i;
+		for(int i = 0; i<values.length; i++)
+			sum += values[i];
+		return sum;
+	}
+	
+	int sum2(int...values) {
+		int sum = 0;
+//		for(int i : values)
+//			sum += i;
+		for(int i = 0; i<values.length; i++)
+			sum += values[i];
+		return sum;
+	}
 }
