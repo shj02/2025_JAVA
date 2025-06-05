@@ -183,6 +183,21 @@ public class 구현클래스명 implements 인터페이스A, 인터페이스B {
 > 다형성의 효과  
 - 다양한 실행 결과를 얻을 수 있음  
 - 객체를 부품화해서 유지보수가 용이  
+```
+RemoteControl[] rc = new RemoteControl[3];
+		rc[0] = audio;
+		rc[1] = tv;
+		rc[2] = smart;
+		
+		for(RemoteControl r : rc) {
+			r.turnOn();
+			r.setVolume(5);
+			r.setMute(true);
+			r.setMute(false);
+			r.turnOff();
+			System.out.println("---\n");
+		}
+```
 
 ## 인터페이스의 상속
 ### 인터페이스 간 상속도 가능
