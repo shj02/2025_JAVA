@@ -163,6 +163,62 @@ public class BeepTaskEx {
 <img src="https://github.com/user-attachments/assets/1f315941-b4cd-4ad0-8b37-ffaffe5519f4">
 
 ## 동기화 메소드 및 동기화 블록 - synchronized
-### 스레드가 사용 중인 객체를 다른 스레드가 변경할 수 없도록 하기 위해 스레드 작업이 끝날 때까지 객체에 잠금 장치 적용
-### 단 하나의 스레드만 실행할 수 있는 메소드 또는 블록
-### 다른 스레드는 메소드나 블록 실행이 끝날 때까지 대기해야 함
+> 스레드가 사용 중인 객체를 다른 스레드가 변경할 수 없도록 하기 위해 스레드 작업이 끝날 때까지 객체에 잠금 장치 적용  
+> 단 하나의 스레드만 실행할 수 있는 메소드 또는 블록  
+> 다른 스레드는 메소드나 블록 실행이 끝날 때까지 대기해야 함
+```java
+package week13;
+
+public class Calculator {
+	//공유 객체용 클래스
+	private int memory;
+
+	public int getMemory() {
+		return memory;
+	}
+
+	public synchronized void setMemory(int memory) throws InterruptedException {
+		this.memory = memory;
+		
+		Thread.sleep(2000);
+		System.out.println(Thread.currentThread().getName() + " : " + this.memory);
+	}
+}
+```
+## 스레드의 일반적인 상태
+<img src="https://github.com/user-attachments/assets/bdadb853-3334-4e6f-95f2-816d5d8019ad">
+
+## 상태 제어
+> 실행 중인 스레드의 상태를 변경하는 것  
+> 상태 변화를 가져오는 메소드의 종류
+<img src="https://github.com/user-attachments/assets/a775386d-c855-4d40-b89a-874659f9868b">
+
+### sleep() - 주어진 시간동안 일시 정지
+> 얼마동안 일시정지 상태로 있을 것인지 밀리세컨드(1/1000) 단위로 지정  
+> 주어진 시간이 지나면 자동으로 실행 대기 상태로 전환  
+> 일시정지 상태에서 주어진 시간이 되기 전에 interrupt() 메소드가 호출되면 InterruptedException 발생 -> 그래서 sleep()은 예외처리 필요  
+```java
+try {
+	Thread.sleep(1000);
+} catch(InterruptedException e) {
+	//interrupt() 메소드가 호출되면 실행
+}
+```
+
+### yield - 다른 스레드에게 실행 양보
+> 실행 상태에서 다른 스레드에게 실행을 양보하고 실행 대기 상태로 전환  
+> 무의미하게 반복하는 스레드일 경우  
+
+### join() - 다른 스레드의 종료를 기다림
+> 다른 스레드가 종료될 때까지 기다렸다가 실행해야 하는 경우  
+> join() 메소드를 호출한 스레드는 일시정지 상태  
+> join() 메소드가 적용된 스레드가 종료되면 다시 실행 대기 상태로 전환  
+> 계산 작업을 하는 스레드가 모든 계산 작업을 마쳤을 때, 결과값을 받아 이용하는 경우 주로 사용
+
+### wait(), notify(), notifyAll() - 스레드 간 협업
+> wait() : 동기화 블록 내에서 스레드를 **일시정지 상태**로 만듦  
+> notify() : wait() 메소드로 일시정지 상태인 스레드를 **실행 대기 상태**로 만듦  
+<img src="https://github.com/user-attachments/assets/4123152a-7ea1-48b9-a04f-a365f738ce91">
+
+> 두 개의 스레드가 교대로 번갈아 가며 실행해야 할 경우 주로 사용  
+<img src="https://github.com/user-attachments/assets/f74c6f12-3d6b-4adb-9276-bb35ab29b393">
